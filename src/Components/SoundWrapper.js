@@ -6,13 +6,13 @@ import Horn from '../chaos_sounds/bike_horn.mp3'
 
 export default class SoundWrapper extends Component {
 
-    songPaths= [Crowd, Alarm, Horn]
+    songs= [Crowd, Alarm, Horn]
 
     render() {
         return (
             <div>
             {
-                this.songPaths.map((song,index)=>{
+                this.songs.map((song,index)=>{
                     return (
                         <Sound 
                         key={index}

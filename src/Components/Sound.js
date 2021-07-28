@@ -11,7 +11,8 @@ export default function Sound(props) {
 
     return (
         <div>
-            <button onMouseDown={() => setSong(crowd)} onClick={()=> {
+            {console.log("before button" + props.songPath)}
+            <button onMouseDown={() => setSong(props.songPath)} onClick={()=> {
                     playing ? stop() : play();
                     setPlaying(!playing);
                     console.log("in here")
