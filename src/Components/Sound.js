@@ -1,5 +1,6 @@
 import Sound from 'react-sound';
 import React, {useState} from 'react'
+import ContinuousSlider from './Slider';
 
 function PlaySound(props) {
   // need hook for volume
@@ -18,6 +19,7 @@ function PlaySound(props) {
         playFromPosition={10}
         volume={Math.random() * 100}
         loop = {true}/>
+        <ContinuousSlider/>
     </div>
   );
 }
