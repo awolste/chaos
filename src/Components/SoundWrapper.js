@@ -11,8 +11,8 @@ export default class SoundWrapper extends Component {
     songs= [
         {title: "Crowd", path: Crowd},
         {title: "Alarm", path: Alarm},
-        {title: "Horn", path: Horn},
-        {title: "Hammer", path: Hammer},
+        {title: "Bike Horn", path: Horn},
+        {title: "Jackhammer", path: Hammer},
         {title: "Cat", path: Cat},
     ]
 
@@ -25,7 +25,7 @@ export default class SoundWrapper extends Component {
                             <PlaySound 
                             key={index}
                             song={song}
-                            volume={10}/>
+                            volume={100}/>
                         )
                     })
                 }

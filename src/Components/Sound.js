@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 
 function PlaySound(props) {
   // need hook for volume
-  const [currVolume, setCurrVolume] = useState(props.volume)
+  //const [currVolume, setCurrVolume] = useState(props.volume)
   const [isPlaying, setIsPlaying] = useState(false);
   return (
     <div>
@@ -16,7 +16,7 @@ function PlaySound(props) {
           isPlaying ? Sound.status.PLAYING : Sound.status.STOPPED          
         }
         playFromPosition={10}
-        volume={currVolume}
+        volume={Math.random() * 100}
         loop = {true}/>
     </div>
   );
