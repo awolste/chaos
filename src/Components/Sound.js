@@ -1,25 +1,21 @@
-import useSound from 'use-sound';
+import Sound from 'react-sound';
 import React, {useState} from 'react'
-import crowd from '../chaos_sounds/crowd.mp3'
+import Horn from '../chaos_sounds/bike_horn.mp3'
 
-
-export default function Sound(props) {
-
-    const [playing, setPlaying] = useState(false);
-    const [song, setSong] = useState('');
-    const [play, {stop}] = useSound(song);
-
-    return (
-        <div>
-            {console.log("before button" + props.songPath)}
-            <button onMouseDown={() => setSong(props.songPath)} onClick={()=> {
-                    playing ? stop() : play();
-                    setPlaying(!playing);
-                    console.log("in here")
-                    console.log (playing)
-                    console.log (song)
-                }}>Toggle noise
-            </button>
-        </div>
-    )
+function PlaySound(props) {
+  const [isPlaying, setIsPlaying] = useState(false);
+  return (
+    <div>
+      <button onClick = {() => setIsPlaying(!isPlaying)}>{!isPlaying ? 'Play' : 'Stop'}
+      </button>
+      <Sound
+        url={props.songPath}
+        playStatus={
+          isPlaying ? Sound.status.PLAYING : Sound.status.STOPPED          
+        }
+        playFromPosition={10}
+        loop = {true}/>
+    </div>
+  );
 }
+export default PlaySound;
