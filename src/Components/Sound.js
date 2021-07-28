@@ -1,19 +1,22 @@
 import Sound from 'react-sound';
 import React, {useState} from 'react'
-import Horn from '../chaos_sounds/bike_horn.mp3'
 
 function PlaySound(props) {
+  // need hook for volume
+  const [currVolume, setCurrVolume] = useState(props.volume)
   const [isPlaying, setIsPlaying] = useState(false);
   return (
     <div>
-      <button onClick = {() => setIsPlaying(!isPlaying)}>{!isPlaying ? 'Play' : 'Stop'}
+      <button onClick = {() => setIsPlaying(!isPlaying)}>
+        {!isPlaying ? 'Play' : 'Stop'} {props.song.title}
       </button>
       <Sound
-        url={props.songPath}
+        url={props.song.path}
         playStatus={
           isPlaying ? Sound.status.PLAYING : Sound.status.STOPPED          
         }
         playFromPosition={10}
+        volume={currVolume}
         loop = {true}/>
     </div>
   );
