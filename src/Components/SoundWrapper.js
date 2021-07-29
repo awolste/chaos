@@ -6,8 +6,11 @@ export default class SoundWrapper extends Component {
 
     constructor(props){
         super(props)
-        this.state={isMuted:true}
+        this.state={
+            isMuted:true
+        }
         this.muteHandler = this.muteHandler.bind(this)
+        this.randomize = this.randomize.bind(this)
     }
 
     muteHandler() {
@@ -17,12 +20,17 @@ export default class SoundWrapper extends Component {
         }, () => {
       });
     }
+
+    randomize = () => {
+        console.log('Randomize')
+    }
     
     render() {
 
         return (
             <div>
                  <button onClick = {(this.muteHandler)}>{this.state.isMuted ? "Mute" : "Unmute"}</button>
+                 <button onClick = {(this.randomize)}>Randomize</button>
                 {
                     this.props.songs.map((song,index)=>{
                         return (
