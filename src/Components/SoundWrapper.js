@@ -34,7 +34,7 @@ export default class SoundWrapper extends Component {
 
         return (
             <div>
-                 <button onClick = {(this.muteHandler)}>{this.state.isMuted ? "Mute" : "Unmute"}</button>
+                 <button onClick = {(this.muteHandler)}>{this.state.isMuted = "Mute"}</button>
                  <button onClick = {(this.randomize)}>Randomize</button>
                 {
                     this.props.songs.map((song,index)=>{
