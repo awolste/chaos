@@ -8,6 +8,7 @@ import Baby from './chaos_sounds/baby_crying.mp3'
 import Bark from './chaos_sounds/bark.mp3'
 import City from './chaos_sounds/chaos_city.mp3'
 import Dolphin from './chaos_sounds/dolphins.mp3'
+import Bees from './chaos_sounds/bees.mp3'
 
 import Birds from './calm_sounds/birds_crickets.mp3'
 import Fire from './calm_sounds/fire.mp3'
@@ -29,6 +30,7 @@ function App() {
         {title: "Dog Barking", path: Bark},
         {title: "City", path: City},
         {title: "Dolphins", path: Dolphin},
+        {title: "Bees", path: Bees},
     ]
 
     var calm= [
