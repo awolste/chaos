@@ -6,7 +6,7 @@ export default class SoundWrapper extends Component {
 
     constructor(props){
         super(props)
-        this.state={isMuted:false}
+        this.state={isMuted:true}
         this.muteHandler = this.muteHandler.bind(this)
     }
 

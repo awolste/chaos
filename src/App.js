@@ -22,7 +22,6 @@ import Chimes from './calm_sounds/wind_chimes.mp3'
 function App() {
 
     var chaos= [
-        //insert others here
         {title: "Alarm", path: Alarm},
         {title: "Bike Horn", path: Horn},
         {title: "Jackhammer", path: Hammer},

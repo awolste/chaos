@@ -1,5 +1,5 @@
 import Sound from 'react-sound';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Grid from '@material-ui/core/Grid';
 import Slider from '@material-ui/core/Slider';
 import VolumeDown from '@material-ui/icons/VolumeDown';
@@ -9,13 +9,16 @@ function PlaySound(props) {
     
     const [isPlaying, setIsPlaying] = useState(false);
     const [value, setValue] = useState(0);
+    //is there a way to trigger a fucntion if a prop changes
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
         console.log("VALUE: " + value)
     };
 
-
+    useEffect(()=>{
+        setIsPlaying(!isPlaying)
+    },[props.isMuted]);
 
     return (
         <div>
