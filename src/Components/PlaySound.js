@@ -22,12 +22,11 @@ function PlaySound(props) {
             </button>
             <Sound
                 url={props.song.path}
-                playStatus={
-                    isPlaying ? Sound.status.PLAYING : Sound.status.STOPPED          
-                }
+                playStatus={isPlaying ? Sound.status.PLAYING : Sound.status.STOPPED}
                 playFromPosition={10}
                 volume={value}
-                loop = {true}/>
+                loop = {true}
+            />
             
             <Grid container spacing={2}>
                 <Grid item>
