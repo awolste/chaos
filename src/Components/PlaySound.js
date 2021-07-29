@@ -11,8 +11,8 @@ function PlaySound(props) {
     const [value, setValue] = useState(0);
 
     const handleChange = (event, newValue) => {
-    setValue(newValue);
-    console.log("VALUE: " + value)
+        setValue(newValue);
+        console.log("VALUE: " + value)
     };
 
     return (
@@ -20,6 +20,7 @@ function PlaySound(props) {
             <button onClick = {() => setIsPlaying(!isPlaying)}>
                 {!isPlaying ? 'Play' : 'Stop'} {props.song.title}
             </button>
+
             <Sound
                 url={props.song.path}
                 playStatus={isPlaying ? Sound.status.PLAYING : Sound.status.STOPPED}
