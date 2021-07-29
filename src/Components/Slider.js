@@ -5,17 +5,12 @@ import Slider from '@material-ui/core/Slider';
 import VolumeDown from '@material-ui/icons/VolumeDown';
 import VolumeUp from '@material-ui/icons/VolumeUp';
 
-const useStyles = makeStyles({
-  root: {
-    width: 200,
-  },
-});
-
 export default function ContinuousSlider() {
   const [value, setValue] = React.useState(30);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    console.log("VALUE: " + value)
   };
 
   return (

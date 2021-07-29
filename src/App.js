@@ -1,5 +1,5 @@
 import './App.css';
-import SoundWrapper from './Components/SoundWrapper';
+import SoundWrapper from './Components/SoundWrapper.js';
 
 function App() {
     return (

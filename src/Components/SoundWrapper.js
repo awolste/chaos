@@ -4,7 +4,7 @@ import Alarm from '../chaos_sounds/alarm.mp3'
 import Horn from '../chaos_sounds/bike_horn.mp3'
 import Hammer from '../chaos_sounds/jackhammers.mp3'
 import Cat from '../chaos_sounds/cat_meow.mp3'
-import PlaySound from './Sound'
+import PlaySound from './PlaySound'
 
 export default class SoundWrapper extends Component {
 
