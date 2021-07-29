@@ -15,15 +15,14 @@ export default class SoundWrapper extends Component {
         this.setState({
             isMuted: !this.state.isMuted
         }, () => {
-      }); 
-      console.log("exit: " + this.state.isMuted)
+      });
     }
     
     render() {
 
         return (
             <div>
-                 <button onClick = {(this.muteHandler)}>mute</button>
+                 <button onClick = {(this.muteHandler)}>{this.state.isMuted ? "Mute" : "Unmute"}</button>
                 {
                     this.props.songs.map((song,index)=>{
                         return (

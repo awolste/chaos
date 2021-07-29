@@ -17,7 +17,8 @@ function PlaySound(props) {
     };
 
     useEffect(()=>{
-        setIsPlaying(!isPlaying)
+        setValue(0)
+        console.log("exit: " + props.isMuted)
     },[props.isMuted]);
 
     return (
