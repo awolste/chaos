@@ -15,8 +15,11 @@ function PlaySound(props) {
         console.log("VALUE: " + value)
     };
 
+
+
     return (
         <div>
+            {console.log("entering sound component" + props.isMuted)}
             <button onClick = {() => setIsPlaying(!isPlaying)}>
                 {!isPlaying ? 'Play' : 'Stop'} {props.song.title}
             </button>
