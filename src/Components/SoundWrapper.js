@@ -7,7 +7,8 @@ export default class SoundWrapper extends Component {
     constructor(props){
         super(props)
         this.state={
-            isMuted:true
+            isMuted:true,
+            randomize:false
         }
         this.muteHandler = this.muteHandler.bind(this)
         this.randomize = this.randomize.bind(this)
@@ -23,6 +24,10 @@ export default class SoundWrapper extends Component {
 
     randomize = () => {
         console.log('Randomize')
+        this.setState({
+            randomize: !this.state.randomize
+        }, () => {
+      });
     }
     
     render() {
@@ -38,7 +43,8 @@ export default class SoundWrapper extends Component {
                             key={index}
                             song={song}
                             volume={100}
-                            isMuted={this.state.isMuted}/>
+                            isMuted={this.state.isMuted}
+                            randomize={this.state.randomize}/>
                         )
                     })
                 }

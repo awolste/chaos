@@ -20,6 +20,11 @@ function PlaySound(props) {
         setValue(0)
         console.log("exit: " + props.isMuted)
     },[props.isMuted]);
+    
+    useEffect(()=>{
+        setValue(Math.random() * 100)
+        console.log("randomize")
+    },[props.randomize]);
 
     return (
         <div>
