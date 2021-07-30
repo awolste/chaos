@@ -13,22 +13,18 @@ function PlaySound(props) {
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
-        console.log("VALUE: " + value)
+        
     };
 
     useEffect(()=>{
         setIsPlaying(!isPlaying)
-        console.log("*********" + isPlaying)
     },[props.isMuted]);
 
-    // useEffect(()=>{
-    //     setIsPlaying(true)
-    // },[props.playAll]);
     
-    // useEffect(()=>{
-    //     setValue(Math.random() * 100)
-    //     console.log("randomize")
-    // },[props.randomize]);
+    useEffect(()=>{
+        setValue(Math.random() * 100)
+        console.log("randomize")
+    },[props.randomize]);
 
     return (
         <div>
@@ -44,6 +40,7 @@ function PlaySound(props) {
                 playFromPosition={10}
                 volume={value}
                 loop = {true}
+                //autoLoad={true}
             />
             
             <Grid container spacing={2}>
