@@ -17,21 +17,26 @@ function PlaySound(props) {
     };
 
     useEffect(()=>{
-        setValue(0)
-        console.log("exit: " + props.isMuted)
+        setIsPlaying(!isPlaying)
+        console.log("*********" + isPlaying)
     },[props.isMuted]);
+
+    // useEffect(()=>{
+    //     setIsPlaying(true)
+    // },[props.playAll]);
     
-    useEffect(()=>{
-        setValue(Math.random() * 100)
-        console.log("randomize")
-    },[props.randomize]);
+    // useEffect(()=>{
+    //     setValue(Math.random() * 100)
+    //     console.log("randomize")
+    // },[props.randomize]);
 
     return (
         <div>
-            {console.log("entering sound component" + props.isMuted)}
+            {/* {console.log("entering sound component" + props.isMuted)}
             <button onClick = {() => setIsPlaying(!isPlaying)}>
                 {!isPlaying ? 'Play' : 'Stop'} {props.song.title}
-            </button>
+            </button> */}
+            <div>{props.song.title}</div>
 
             <Sound
                 url={props.song.path}
