@@ -12,18 +12,20 @@ function PlaySound(props) {
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
+        setIsPlaying(true)
     };
 
-    // as component did mount
-    useEffect(()=>{
-        setIsPlaying(!isPlaying)
-    },[props.setIntitialPlay]);
+    // // as component did mount
+    // useEffect(()=>{
+    //    setIsPlaying(!isPlaying)
+    // },[props.setIntitialPlay]);
 
-    //as component did update
-    useEffect(()=>{
-        setValue(Math.random() * 100)
-    },[props.randomize]);
+    // //as component did update
+    // useEffect(()=>{
+    //     setValue(Math.random() * 100)
+    // },[props.randomize]);
     
+    // how to only call this when the button is pressed
     // //as component did update
     // useEffect(()=>{
     //     setValue(0)
