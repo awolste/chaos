@@ -39,7 +39,7 @@ export default class SoundWrapper extends Component {
 
         return (
             <div>
-                {/* <button onClick={this.muteHandler}>Mute</button> */}
+                <button onClick={this.muteHandler}>Mute</button>
                 {/* <button onClick={this.playHandler}>Play</button>  */}
                 <button onClick = {(this.randomize)}>Randomize</button>
                 {

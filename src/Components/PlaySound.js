@@ -7,7 +7,7 @@ import VolumeUp from '@material-ui/icons/VolumeUp';
 
 function PlaySound(props) {
     
-    const [isPlaying, setIsPlaying] = useState(false);
+    const [isPlaying, setIsPlaying] = useState(true);
     const [value, setValue] = useState(0);
     //is there a way to trigger a fucntion if a prop changes
 
@@ -17,7 +17,7 @@ function PlaySound(props) {
     };
 
     useEffect(()=>{
-        setIsPlaying(!isPlaying)
+        setValue(0)
     },[props.isMuted]);
 
     
