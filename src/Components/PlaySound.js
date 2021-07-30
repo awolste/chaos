@@ -7,20 +7,27 @@ import VolumeUp from '@material-ui/icons/VolumeUp';
 
 function PlaySound(props) {
     
-    const [isPlaying, setIsPlaying] = useState(true);
+    const [isPlaying, setIsPlaying] = useState(false);
     const [value, setValue] = useState(0);
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
 
+    // as component did mount
     useEffect(()=>{
-        setValue(0)
-    },[props.isMuted]);
+        setIsPlaying(!isPlaying)
+    },[props.setIntitialPlay]);
 
+    //as component did update
     useEffect(()=>{
         setValue(Math.random() * 100)
     },[props.randomize]);
+    
+    // //as component did update
+    // useEffect(()=>{
+    //     setValue(0)
+    // },[props.mute]);
 
     return (
         <div>
