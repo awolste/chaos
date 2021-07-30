@@ -45,9 +45,7 @@ function App() {
 
     return (
         <div>
-            <h1>Chaos</h1>
             <SoundWrapper songs={chaos}/>
-            <h1>Calm</h1>
             <SoundWrapper songs={calm}/>
         </div>
   );
