@@ -9,30 +9,24 @@ function PlaySound(props) {
     
     const [isPlaying, setIsPlaying] = useState(true);
     const [value, setValue] = useState(0);
-    //is there a way to trigger a fucntion if a prop changes
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
-        
     };
 
     useEffect(()=>{
         setValue(0)
     },[props.isMuted]);
 
-    
     useEffect(()=>{
         setValue(Math.random() * 100)
-        console.log("randomize")
     },[props.randomize]);
 
     return (
         <div>
-            {/* {console.log("entering sound component" + props.isMuted)}
-            <button onClick = {() => setIsPlaying(!isPlaying)}>
-                {!isPlaying ? 'Play' : 'Stop'} {props.song.title}
-            </button> */}
-            <div>{props.song.title}</div>
+            <div>
+                {props.song.title}
+            </div>
 
             <Sound
                 url={props.song.path}

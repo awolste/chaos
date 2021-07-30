@@ -33,8 +33,7 @@ var chaos= [
   {title: "Dog Barking", path: Bark},
   {title: "City", path: City},
   {title: "Dolphins", path: Dolphin},
-  {title: "Bees", path: Bees},
-]
+  {title: "Bees", path: Bees}]
 
 var calm= [
   {title: "Birds", path: Birds},
@@ -44,33 +43,31 @@ var calm= [
   {title: "Rain", path: Rain},
   {title: "Rainforest", path: Rainforest},
   {title: "Thunder", path: Thunder},
-  {title: "Wind Chimes", path: Chimes},
-]
+  {title: "Wind Chimes", path: Chimes}]
 
 
 const routing = (
-  <Router>
-    <div>
-      {/* <Route exact path="/" component={App} /> */}
-	  <Route exact path="/">
-		  <Redirect to="/calm" from="/" />
-		  </Route>	  
-	  <Route
-	  	path='/calm'
-		render={(props)=>(
-			<SoundWrapper {...props} songs={calm} />
-		)}
-		/>
-      <Route
-	  	path='/chaos'
-		render={(props)=>(
-			<SoundWrapper {...props} songs={chaos} />
-		)}
-		/>
-	   {/* <Route path="/chaos" component={SoundWrapper} /> */}
-    </div>
-  </Router>
+    <Router>
+            <div>
+                <Route exact path="/">
+                    <Redirect to="/calm" from="/" />
+                </Route>	  
+                <Route
+                    path='/calm'
+                    render={(props)=>(
+                        <SoundWrapper {...props} songs={calm} />
+                    )}
+                />
+                <Route
+                    path='/chaos'
+                    render={(props)=>(
+                        <SoundWrapper {...props} songs={chaos} />
+                    )}
+                />
+            </div>
+    </Router>
 )
+
 ReactDOM.render(routing, document.getElementById('root'))
 
 // If you want to start measuring performance in your app, pass a function
