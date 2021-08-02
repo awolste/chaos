@@ -30,7 +30,6 @@ function PlaySound(props) {
             <Sound
                 url={props.song.path}
                 playStatus={isPlaying ? Sound.status.PLAYING : Sound.status.STOPPED}
-                playFromPosition={10}
                 volume={value}
                 loop = {true}
                 //autoLoad={true}
