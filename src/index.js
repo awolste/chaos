@@ -4,7 +4,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import './App.css';
 import SoundWrapper from './Components/SoundWrapper.js';
-import { Route, Redirect, Link, BrowserRouter as Router } from 'react-router-dom'
+import { Route, Redirect, BrowserRouter as Router } from 'react-router-dom'
 
 
 import Alarm from './chaos_sounds/alarm.mp3'

@@ -6,31 +6,28 @@ export default class SoundWrapper extends Component {
         super(props)
         this.state={
             // is muted should be true while is playing is false on start
-            setIntitialPlay:false,
-            randomize:false,
-            mute:false,
+            random:false,
+            isMuted:true,
         }
-        this.initHandler = this.initHandler.bind(this)
-        this.randomize = this.randomize.bind(this)
+        // this.randomize = this.randomize.bind(this)
         this.mute = this.mute.bind(this)
+        this.onVolumeChange = this.onVolumeChange.bind(this)
     }
 
-    initHandler() {
-        this.setState({
-            setIntitialPlay: !this.state.setIntitialPlay
-        });
-    }
-
-    randomize () {
-        this.setState({
-            randomize: !this.state.randomize
-        });
-    }
+    // randomize () {
+    //     this.setState({
+    //         random: !this.state.random
+    //     });
+    // }
 
     mute(){
         this.setState({
-            mute: !this.state.mute
+            isMuted: !this.state.isMuted
         });
+    }
+
+    onVolumeChange(event, newVol) {
+        console.log("EVENT: " + event.target.id + "   NEWVAL: " + newVol)
     }
     
     render() {
@@ -38,7 +35,7 @@ export default class SoundWrapper extends Component {
         return (
             <div>
                 <button onClick={this.mute}>Mute</button>
-                <button onClick = {(this.randomize)}>Randomize</button>
+                {/* <button onClick = {(this.randomize)}>Randomize</button> */}
 
                 {
                     this.props.songs.map((song,index)=>{
@@ -46,9 +43,9 @@ export default class SoundWrapper extends Component {
                             <PlaySound 
                                 key={index}
                                 song={song}
-                                setIntitialPlay={this.state.setIntitialPlay}
-                                randomize={this.state.randomize}
-                                mute={this.state.mute}
+                                // random={this.state.random}
+                                isMuted={this.state.isMuted}
+                                onVolumeChange={this.onVolumeChange}
                             />
                         )
                     })
