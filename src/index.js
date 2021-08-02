@@ -45,6 +45,15 @@ var calm= [
   {title: "Thunder", path: Thunder},
   {title: "Wind Chimes", path: Chimes}]
 
+  var calmStyles= {
+    background : "background1",
+    head : "head1",
+}
+
+var chaosStyles= {
+    background : "background2",
+    head : "head2",
+}
 
 const routing = (
     <Router>
@@ -55,13 +64,13 @@ const routing = (
                 <Route
                     path='/calm'
                     render={(props)=>(
-                        <SoundWrapper {...props} songs={calm} />
+                        <SoundWrapper {...props} songs={calm} styles={calmStyles}/>
                     )}
                 />
                 <Route
                     path='/chaos'
                     render={(props)=>(
-                        <SoundWrapper {...props} songs={chaos} />
+                        <SoundWrapper {...props} songs={chaos} styles={chaosStyles}/>
                     )}
                 />
             </div>

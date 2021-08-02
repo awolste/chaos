@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 import PlaySound from './PlaySound'
 export default class SoundWrapper extends Component {
 
@@ -12,6 +13,7 @@ export default class SoundWrapper extends Component {
         // this.randomize = this.randomize.bind(this)
         this.mute = this.mute.bind(this)
         this.onVolumeChange = this.onVolumeChange.bind(this)
+        this.saveSettings = this.saveSettings.bind(this)
     }
 
     // randomize () {
@@ -26,11 +28,17 @@ export default class SoundWrapper extends Component {
                 [song.title]: 0
             })
         });
+        console.log(this.props.styles["background"])
     }
 
     mute(){
         this.setState({
             isMuted: !this.state.isMuted
+        });
+        this.props.songs.forEach(song => {
+            this.setState({
+                [song.title]: 0
+            })
         });
     }
 
@@ -40,12 +48,26 @@ export default class SoundWrapper extends Component {
                 [event]: newVol
             });
     }
+
+    saveSettings(){
+        let volArr = []
+        this.props.songs.forEach(song => {
+            volArr.push(this.state[song.title])
+        })
+
+        axios.post(`http://blooming-sands-86661.herokuapp.com/create`, volArr)
+            .then(res => {
+                    console.log(res.data)
+            })
+    }
     
     render() {
 
         return (
-            <div>
+            // accessing a style in this format
+            <div className={this.props.styles["background"]}>
                 <button onClick={this.mute}>Mute</button>
+                <button onClick={this.saveSettings}>Test Save</button>
                 {/* <button onClick = {(this.randomize)}>Randomize</button> */}
 
                 {
