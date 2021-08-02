@@ -20,6 +20,14 @@ export default class SoundWrapper extends Component {
     //     });
     // }
 
+    componentDidMount(){
+        this.props.songs.forEach(song => {
+            this.setState({
+                [song.title]: 0
+            })
+        });
+    }
+
     mute(){
         this.setState({
             isMuted: !this.state.isMuted
@@ -27,7 +35,10 @@ export default class SoundWrapper extends Component {
     }
 
     onVolumeChange(event, newVol) {
-        console.log("EVENT: " + event.target.id + "   NEWVAL: " + newVol)
+        console.log("EVENT: " + event + "   NEWVAL: " + newVol)
+            this.setState({
+                [event]: newVol
+            });
     }
     
     render() {

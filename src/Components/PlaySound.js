@@ -13,7 +13,7 @@ function PlaySound(props) {
     const handleChange = (event, newValue) => {
         setValue(newValue);
         setIsPlaying(true);
-        props.onVolumeChange(event, newValue)
+        props.onVolumeChange(props.song.title, newValue)
     };
 
     //as component did update
