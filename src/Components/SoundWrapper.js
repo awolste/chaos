@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import PlaySound from './PlaySound'
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+import toast,{ Toaster } from 'react-hot-toast'
 export default class SoundWrapper extends Component {
 
     constructor(props){
@@ -58,7 +59,18 @@ export default class SoundWrapper extends Component {
 
         axios.post(`http://blooming-sands-86661.herokuapp.com/create`, volArr)
             .then(res => {
-                    console.log(res.data)
+                // need to remove id if url has an id already
+                // window.location.origin + /chaos 
+                navigator.clipboard.writeText(window.location.origin + this.props.currPath +"/"+ res.data)  
+                toast.success('Sharable link copied to clipboard!',
+                    {
+                        style: {
+                            borderRadius: '10px',
+                            background: '#333',
+                            color: '#fff',
+                        },
+                    }
+                );
             })
     }
     
@@ -67,6 +79,7 @@ export default class SoundWrapper extends Component {
         return (
             // accessing a style in this format
             <div className={this.props.styles["background"]}>
+                <div><Toaster/></div>
                 <button className="muteButton" onClick={this.mute}>Mute</button>
                 <button className = "saveButton" onClick={this.saveSettings}>Test Save</button>
                 <button className="switchButton"><Link className="buttonLink" to={this.props.redirectPath}>C{(this.props.redirectPath).substring(2)} Mode</Link></button>
