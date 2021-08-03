@@ -47,10 +47,12 @@ var calm= [
 
     var calmStyles= {
         background : "backgroundCalm",
+        bar: "bar"
     }
 
     var chaosStyles= {
         background : "backgroundChaos",
+        bar: "bar2"
     }
 
 const routing = (
