@@ -103,27 +103,80 @@ export default class SoundWrapper extends Component {
             // accessing a style in this format
             <div className={this.props.styles["background"]}>
                 <div><Toaster/></div>
+                <div className="elementBox">
+                    <div id="bars">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+
+                <div className="buttonBox">
+                    <div className="buttonText">
+                        C{this.props.redirectPath.substring(2)} Mode
+                    </div>
+                    <Link className=" musicButton buttonLink" to={this.props.redirectPath}></Link>
+                </div>
+                <div className="buttonBox2">
+                    <div className="buttonText2">
+                        Mute
+                    </div>
+                    <button className="musicButton" onClick={this.mute}></button>
+                </div>
+                <div className="buttonBox3">
+                    <div className="buttonText3">
+                        Save Settings
+                    </div>
+                    <button className="musicButton" onClick={this.saveSettings}></button>
+                </div>
                 <button className="" onClick={this.setToPlaying}>Play</button>
-                <button className="muteButton" onClick={this.mute}>Mute</button>
-                <button className="saveButton" onClick={this.saveSettings}>Save</button>
-                <button className="switchButton"><Link to={this.props.redirectPath}>Change Route to {this.props.redirectPath}</Link></button>
+
+                
+                
                 {/* <button onClick = {(this.randomize)}>Randomize</button> */}
 
-                {
-                    this.props.songs.map((song,index)=>{
-                        return (
-                            <PlaySound 
-                                key={index}
-                                song={song}
-                                volume={this.state[song.title]}
-                                // random={this.state.random}
-                                isMuted={this.state.isMuted}
-                                play={this.state.play}
-                                onVolumeChange={this.onVolumeChange}
-                            />
-                        )
-                    })
-                }
+                <div className="songs">
+                    {
+                        this.props.songs.map((song,index)=>{
+                            return (
+                                <PlaySound 
+                                    key={index}
+                                    song={song}
+                                    volume={this.state[song.title]}
+                                    // random={this.state.random}
+                                    isMuted={this.state.isMuted}
+                                    play={this.state.play}
+                                    onVolumeChange={this.onVolumeChange}
+                                />
+                            )
+                        })
+                    }
+                </div>
             </div>
         )
     }

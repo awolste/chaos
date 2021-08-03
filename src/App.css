@@ -23,30 +23,169 @@
 	animation: gradient 3s cubic-bezier(0.6, -0.28, 0.735, 0.045) infinite;
 	height: 100vh;
 }
+
 .buttonLink:link {
     text-decoration: none;
+    color: white;
+    background-color: #333;
 }
+
 .buttonLink:visited {
     text-decoration: none;
+    color: white;
+    background-color: #333;
 }
+
 .buttonLink:hover {
     text-decoration: none;
+    color: white;
+    background-color: #333;
 }
+
 .buttonLink:active {
-    -decoration: none;
+    text-decoration: none;
+    color: white;
+    background-color: #333;
 }
-.switchButton {
+
+.musicButton {
     position: absolute;
-    top: 60%;
-    right: 35%;
+    color: white;
+    right: 10px;
+    top: 5px;
+    background-color: #333;
+    border-radius: 25px;
+    height: 25px;
+    width: 50px;
 }
-.muteButton {
+
+
+.buttonBox{
     position: absolute;
-    top: 65%;
-    right: 35%;
+    top: 60vh;
+    right: 15%;
+    border: 2px solid #333;
+    width: 250px;
+    height: 35px;
+    border-radius: 25px;
 }
-.saveButton {
+
+.buttonText{
     position: absolute;
-    top: 70%;
-    right: 35%;
+    left: 10px;
+    top: 5px;
 }
+
+.buttonBox2{
+    position: absolute;
+    top: 66vh;
+    right: 15%;
+    border: 2px solid #333;
+    width: 250px;
+    height: 35px;
+    border-radius: 25px;
+}
+
+.buttonText2{
+    position: absolute;
+    left: 10px;
+    top: 5px;
+}
+
+.buttonBox3{
+    position: absolute;
+    top: 72vh;
+    right: 15%;
+    border: 2px solid #333;
+    width: 250px;
+    height: 35px;
+    border-radius: 25px;
+}
+
+.buttonText3{
+    position: absolute;
+    left: 10px;
+    top: 5px;
+}
+
+.slider{
+    height: 300;
+}
+
+.songs{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.song{
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+}
+
+.elementBox{
+    position: absolute;
+    top: 60vh;
+    left: 15%;
+    border: 2px solid #333;
+    width: 30vw;
+    height: 16.75vh;
+    border-radius: 25px;
+}
+
+#bars {
+    left: 1px;
+    height: 16.75vh;
+    width: 10vw;
+}
+
+.bar {
+   background: #666;
+    bottom: 1px;
+    height: 40px;
+    position: absolute;
+    width: .8vw;      
+    animation: sound 0ms -800ms linear infinite alternate;
+}
+
+@keyframes sound {
+    0% {
+       opacity: .35;
+        height: 3px; 
+    }
+    100% {
+        opacity: 1;       
+        height: 100px;
+    }
+}
+
+.bar:nth-child(1)  { left: 1vw; animation-duration: 3291ms; }
+.bar:nth-child(2)  { left: 2vw; animation-duration: 2584ms; }
+.bar:nth-child(3)  { left: 3vw; animation-duration: 2407ms; }
+.bar:nth-child(4)  { left: 4vw; animation-duration: 2287ms; }
+.bar:nth-child(5)  { left: 5vw; animation-duration: 2001ms; }
+.bar:nth-child(6)  { left: 6vw; animation-duration: 1427ms; }
+.bar:nth-child(7)  { left: 7vw; animation-duration: 3441ms; }
+.bar:nth-child(8)  { left: 8vw; animation-duration: 2419ms; }
+.bar:nth-child(9)  { left: 9vw; animation-duration: 1487ms; }
+.bar:nth-child(10) { left: 10vw; animation-duration: 3411ms; }
+.bar:nth-child(11)  { left: 11vw; animation-duration: 1429ms; }
+.bar:nth-child(12)  { left: 12vw; animation-duration: 2687ms; }
+.bar:nth-child(13)  { left: 13vw; animation-duration: 1925ms; }
+.bar:nth-child(14)  { left: 14vw; animation-duration: 3563ms; }
+.bar:nth-child(15)  { left: 15vw; animation-duration: 1629ms; }
+.bar:nth-child(16)  { left: 16vw; animation-duration: 3248ms; }
+.bar:nth-child(17)  { left: 17vw; animation-duration: 1039ms; }
+.bar:nth-child(18)  { left: 18vw; animation-duration: 2163ms; }
+.bar:nth-child(19)  { left: 19vw; animation-duration: 2771ms; }
+.bar:nth-child(20){ left: 20vw; animation-duration: 3780ms; }
+.bar:nth-child(21)  { left: 21vw; animation-duration: 1629ms; }
+.bar:nth-child(22)  { left: 22vw; animation-duration: 3248ms; }
+.bar:nth-child(23)  { left: 23vw; animation-duration: 1039ms; }
+.bar:nth-child(24)  { left: 24vw; animation-duration: 2163ms; }
+.bar:nth-child(25)  { left: 25vw; animation-duration: 2771ms; }
+.bar:nth-child(26)  { left: 26vw; animation-duration: 1629ms; }
+.bar:nth-child(27)  { left: 27vw; animation-duration: 3248ms; }
+.bar:nth-child(28)  { left: 28vw; animation-duration: 1039ms; }

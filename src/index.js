@@ -38,12 +38,12 @@ var chaos= [
 var calm= [
   {title: "Birds", path: Birds},
   {title: "Fire", path: Fire},
-  {title: "Running Creek", path: Creek},
+  {title: "Creek", path: Creek},
   {title: "Waves", path: Ocean},
   {title: "Rain", path: Rain},
   {title: "Rainforest", path: Rainforest},
   {title: "Thunder", path: Thunder},
-  {title: "Wind Chimes", path: Chimes}]
+  {title: "Chimes", path: Chimes}]
 
     var calmStyles= {
         background : "backgroundCalm",

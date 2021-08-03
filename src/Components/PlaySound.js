@@ -1,9 +1,8 @@
 import Sound from 'react-sound';
 import React, {useState, useEffect} from 'react';
-import Grid from '@material-ui/core/Grid';
 import Slider from '@material-ui/core/Slider';
-import VolumeDown from '@material-ui/icons/VolumeDown';
-import VolumeUp from '@material-ui/icons/VolumeUp';
+import { makeStyles } from '@material-ui/core/styles';
+
 
 function PlaySound(props) {
     
@@ -29,11 +28,20 @@ function PlaySound(props) {
         if(props.play){setIsPlaying(true)}
     },[props.play]);
 
+    const useStyles = makeStyles({
+        root: {
+            height: 300,
+            padding: "4vw",
+            width: "14px !important",
+            trackColor: "#333"
+        },
+      });
+
+    const classes = useStyles();
+
     return (
-        <div>
-            <div>
-                {props.song.title}
-            </div>
+        <div className="song">
+            
 
             <Sound
                 url={props.song.path}
@@ -43,17 +51,18 @@ function PlaySound(props) {
                 //autoLoad={true}
             />
             
-            <Grid container spacing={2}>
-                <Grid item>
-                    <VolumeDown />
-                </Grid>
-                <Grid item xs>
-                    <Slider value={value} onChange={handleChange} aria-labelledby="continuous-slider" />
-                </Grid>
-                <Grid item>
-                    <VolumeUp />
-                </Grid>
-            </Grid>
+            <div className={classes.root}>
+                {/* <Slider value={value} onChange={handleChange} aria-labelledby="continuous-slider" /> */}
+                <Slider
+                    orientation="vertical"
+                    value={value}
+                    onChange={handleChange}
+                    aria-labelledby="vertical-slider"   
+                />
+            </div>
+            <div>
+                {props.song.title}
+            </div>
         </div>
     );
 } export default PlaySound;
