@@ -1,5 +1,3 @@
-
-
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
@@ -25,38 +23,30 @@
 	animation: gradient 3s cubic-bezier(0.6, -0.28, 0.735, 0.045) infinite;
 	height: 100vh;
 }
-
 .buttonLink:link {
-  text-decoration: none;
+    text-decoration: none;
 }
-
 .buttonLink:visited {
-  text-decoration: none;
+    text-decoration: none;
 }
-
 .buttonLink:hover {
-  text-decoration: none;
+    text-decoration: none;
 }
-
 .buttonLink:active {
-  text-decoration: none;
+    -decoration: none;
 }
-
 .switchButton {
-  position: absolute;
-  top: 60%;
-  right: 35%;
+    position: absolute;
+    top: 60%;
+    right: 35%;
 }
-
 .muteButton {
-  position: absolute;
-  top: 65%;
-  right: 35%;
+    position: absolute;
+    top: 65%;
+    right: 35%;
 }
-
 .saveButton {
-  position: absolute;
-  top: 70%;
-  right: 35%;
+    position: absolute;
+    top: 70%;
+    right: 35%;
 }
-
