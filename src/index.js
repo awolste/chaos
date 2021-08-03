@@ -29,8 +29,8 @@ var chaos= [
   {title: "Alarm", path: Alarm},
   {title: "Bike Horn", path: Horn},
   {title: "Jackhammer", path: Hammer},
-  {title: "Baby Crying", path: Baby},
-  {title: "Dog Barking", path: Bark},
+  {title: "Crying", path: Baby},
+  {title: "Barking", path: Bark},
   {title: "City", path: City},
   {title: "Dolphins", path: Dolphin},
   {title: "Bees", path: Bees}]

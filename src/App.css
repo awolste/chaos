@@ -18,9 +18,9 @@
 }
 
 .backgroundChaos{
-	background: radial-gradient(#55188f,#0f1425,#cb0910,#000000);
+	background: linear-gradient(90deg,#EF8354,#A2C7E5,#5C946E,#D138BF);
 	background-size: 400% 400%;
-	animation: gradient 3s cubic-bezier(0.6, -0.28, 0.735, 0.045) infinite;
+	animation: gradient 10s infinite reverse;
 	height: 100vh;
 }
 
