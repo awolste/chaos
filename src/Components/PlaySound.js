@@ -42,6 +42,9 @@ function PlaySound(props) {
           MuiSlider: {
             thumb:{
             color: "#333",
+            width: "30px",
+            left: "5px",
+            borderRadius: "25px"
             },
             track: {
               color: '#fff'

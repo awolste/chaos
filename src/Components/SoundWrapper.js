@@ -85,6 +85,7 @@ export default class SoundWrapper extends Component {
             .then(res => {
                 // need to remove id if url has an id already
                 // window.location.origin + /chaos 
+                console.log("in here" + navigator.clipboard)
                 navigator.clipboard.writeText(window.location.origin + this.props.currPath +"/"+ res.data)  
                 toast.success('Sharable link copied to clipboard!',
                     {

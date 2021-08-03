@@ -32,7 +32,7 @@
 }
 
 .backgroundChaos{
-	background: linear-gradient(90deg,#EF8354,#A2C7E5,#5C946E,#D138BF);
+	background: linear-gradient(-45deg, #36189f, #c05d86, #d16330, #f123a3);
 	background-size: 400% 400%;
 	animation: gradient 10s infinite reverse;
 	height: 100vh;
@@ -156,7 +156,7 @@
 }
 
 .bar {
-   background: #666;
+    background: #333;
     bottom: 1px;
     height: 40px;
     position: absolute;
@@ -165,17 +165,17 @@
 }
 
 .bar2 {
-    background: #666;
-     bottom: 1px;
-     height: 40px;
-     position: absolute;
-     width: .8vw;      
-     animation: sound 0ms -800ms linear infinite alternate;
+    background: #333;
+    bottom: 1px;
+    height: 40px;
+    position: absolute;
+    width: .8vw;      
+    animation: sound 0ms -800ms linear infinite alternate;
  }
 
 @keyframes sound {
     0% {
-       opacity: .35;
+       opacity: .5;
         height: 3px; 
     }
     100% {
@@ -204,14 +204,14 @@
 .bar:nth-child(18)  { left: 18vw; animation-duration: 2163ms; }
 .bar:nth-child(19)  { left: 19vw; animation-duration: 2771ms; }
 .bar:nth-child(20){ left: 20vw; animation-duration: 3780ms; }
-.bar:nth-child(21)  { left: 21vw; animation-duration: 1629ms; }
-.bar:nth-child(22)  { left: 22vw; animation-duration: 3248ms; }
-.bar:nth-child(23)  { left: 23vw; animation-duration: 1039ms; }
-.bar:nth-child(24)  { left: 24vw; animation-duration: 2163ms; }
-.bar:nth-child(25)  { left: 25vw; animation-duration: 2771ms; }
-.bar:nth-child(26)  { left: 26vw; animation-duration: 1629ms; }
-.bar:nth-child(27)  { left: 27vw; animation-duration: 3248ms; }
-.bar:nth-child(28)  { left: 28vw; animation-duration: 1039ms; }
+.bar:nth-child(21)  { left: 21vw; animation-duration: 2629ms; }
+.bar:nth-child(22)  { left: 22vw; animation-duration: 1248ms; }
+.bar:nth-child(23)  { left: 23vw; animation-duration: 2039ms; }
+.bar:nth-child(24)  { left: 24vw; animation-duration: 2763ms; }
+.bar:nth-child(25)  { left: 25vw; animation-duration: 1771ms; }
+.bar:nth-child(26)  { left: 26vw; animation-duration: 3029ms; }
+.bar:nth-child(27)  { left: 27vw; animation-duration: 2248ms; }
+.bar:nth-child(28)  { left: 28vw; animation-duration: 1539ms; }
 
 
 .bar2:nth-child(1)  { left: 1vw; animation-duration: 321ms; }
