@@ -20,6 +20,10 @@ function PlaySound(props) {
     useEffect(()=>{
         setValue(0)
     },[props.isMuted]);
+    
+    useEffect(()=>{
+        setValue(props.volume)
+    },[props.volume]);
 
     return (
         <div>

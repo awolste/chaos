@@ -10,6 +10,7 @@ export default class SoundWrapper extends Component {
             // is muted should be true while is playing is false on start
             random:false,
             isMuted:true,
+            settingsId: this.props.match.params.id
         }
         // this.randomize = this.randomize.bind(this)
         this.mute = this.mute.bind(this)
@@ -24,11 +25,27 @@ export default class SoundWrapper extends Component {
     // }
 
     componentDidMount(){
-        this.props.songs.forEach(song => {
-            this.setState({
-                [song.title]: 0
+        
+        console.log(this.props.match.params.id)
+        if (this.props.match.params.id !== undefined){
+            axios.get(`https://blooming-sands-86661.herokuapp.com/settings/${this.props.match.params.id}`)
+            .then(res => {
+                this.props.songs.forEach((song, index) => {
+                    console.log(res.data[index])
+                    this.setState({
+                        [song.title]: res.data[index]
+                    })
+                }); 
             })
-        });
+        }
+        else{
+            this.props.songs.forEach(song => {
+                this.setState({
+                    [song.title]: 0
+                })
+            });
+        }
+        
     }
 
     mute(){
@@ -59,7 +76,8 @@ export default class SoundWrapper extends Component {
             volumes: volArr
         })
             .then(res => {
-                    console.log(res.data)
+                    console.log("Copied! "+window.location.href +"/"+ res.data)
+                    navigator.clipboard.writeText(window.location.href +"/"+ res.data)  
             })
     }
     
@@ -75,10 +93,12 @@ export default class SoundWrapper extends Component {
 
                 {
                     this.props.songs.map((song,index)=>{
+                        console.log("HERE " + this.state[song.title])
                         return (
                             <PlaySound 
                                 key={index}
                                 song={song}
+                                volume={this.state[song.title]}
                                 // random={this.state.random}
                                 isMuted={this.state.isMuted}
                                 onVolumeChange={this.onVolumeChange}
