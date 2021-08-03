@@ -45,15 +45,13 @@ var calm= [
   {title: "Thunder", path: Thunder},
   {title: "Wind Chimes", path: Chimes}]
 
-  var calmStyles= {
-    background : "background1",
-    head : "head1",
-}
+    var calmStyles= {
+        background : "backgroundCalm",
+    }
 
-var chaosStyles= {
-    background : "background2",
-    head : "head2",
-}
+    var chaosStyles= {
+        background : "backgroundChaos",
+    }
 
 const routing = (
     <Router>
