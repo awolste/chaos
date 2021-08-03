@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import PlaySound from './PlaySound'
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 export default class SoundWrapper extends Component {
 
     constructor(props){
@@ -29,7 +29,6 @@ export default class SoundWrapper extends Component {
                 [song.title]: 0
             })
         });
-        console.log(this.props.styles["background"])
     }
 
     mute(){
@@ -55,8 +54,10 @@ export default class SoundWrapper extends Component {
         this.props.songs.forEach(song => {
             volArr.push(this.state[song.title])
         })
-
-        axios.post(`http://blooming-sands-86661.herokuapp.com/create`, volArr)
+        console.log("HERE " + typeof volArr)
+        axios.post(`https://blooming-sands-86661.herokuapp.com/create`, {
+            volumes: volArr
+        })
             .then(res => {
                     console.log(res.data)
             })
