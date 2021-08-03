@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import PlaySound from './PlaySound'
 import { Link } from 'react-router-dom'
+import toast,{ Toaster } from 'react-hot-toast'
 export default class SoundWrapper extends Component {
 
     constructor(props){
@@ -83,8 +84,8 @@ export default class SoundWrapper extends Component {
             .then(res => {
                 // need to remove id if url has an id already
                 // window.location.origin + /chaos 
-                console.log("Copied! "+window.location.origin + this.props.currPath +"/"+ res.data)
                 navigator.clipboard.writeText(window.location.origin + this.props.currPath +"/"+ res.data)  
+                toast.success('Sharable Link Copied to Clipboard!');
             })
     }
     
@@ -93,6 +94,7 @@ export default class SoundWrapper extends Component {
         return (
             // accessing a style in this format
             <div className={this.props.styles["background"]}>
+                <div><Toaster/></div>
                 <button onClick={this.setToPlaying}>Play</button>
                 <button onClick={this.mute}>Mute</button>
                 <button onClick={this.saveSettings}>Save</button>
