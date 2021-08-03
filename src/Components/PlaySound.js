@@ -39,20 +39,21 @@ function PlaySound(props) {
 
       const muiTheme = createMuiTheme({
         overrides:{
-          MuiSlider: {
-            thumb:{
-            color: "#333",
-            width: "30px",
-            left: "5px",
-            borderRadius: "25px"
-            },
-            track: {
-              color: '#fff'
-            },
-            rail: {
-              color: '#333'
+            MuiSlider: {
+                thumb:{
+                    color: "#333",
+                    width: "40px",
+                    height: "15px",
+                    left: "-2px",
+                    borderRadius: "25px"
+                },
+                track: {
+                    color: '#fff'
+                },
+                rail: {
+                    color: '#333'
+                }
             }
-          }
       }
       });
 
