@@ -46,7 +46,6 @@ export default class SoundWrapper extends Component {
                 })
             });
         }
-        
     }
 
     mute(){
@@ -82,8 +81,10 @@ export default class SoundWrapper extends Component {
             volumes: volArr
         })
             .then(res => {
-                    console.log("Copied! "+window.location.href +"/"+ res.data)
-                    navigator.clipboard.writeText(window.location.href +"/"+ res.data)  
+                // need to remove id if url has an id already
+                // window.location.origin + /chaos 
+                console.log("Copied! "+window.location.origin + this.props.currPath +"/"+ res.data)
+                navigator.clipboard.writeText(window.location.origin + this.props.currPath +"/"+ res.data)  
             })
     }
     
@@ -94,7 +95,7 @@ export default class SoundWrapper extends Component {
             <div className={this.props.styles["background"]}>
                 <button onClick={this.setToPlaying}>Play</button>
                 <button onClick={this.mute}>Mute</button>
-                <button onClick={this.saveSettings}>Test Save</button>
+                <button onClick={this.saveSettings}>Save</button>
                 <button><Link to={this.props.redirectPath}>Change Route to {this.props.redirectPath}</Link></button>
                 {/* <button onClick = {(this.randomize)}>Randomize</button> */}
 

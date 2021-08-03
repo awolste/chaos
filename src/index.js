@@ -62,25 +62,25 @@ const routing = (
                 <Route
                     exact path='/calm'
                     render={(props)=>(
-                        <SoundWrapper {...props} songs={calm} styles={calmStyles} redirectPath={"/chaos"}/>
+                        <SoundWrapper {...props} songs={calm} styles={calmStyles} currPath={"/calm"} redirectPath={"/chaos"}/>
                     )}
                 />	  
                 <Route
                     exact path='/calm/:id'
                     render={(props)=>(
-                        <SoundWrapper {...props} songs={calm} styles={calmStyles} redirectPath={"/chaos"}/>
+                        <SoundWrapper {...props} songs={calm} styles={calmStyles} currPath={"/calm"} redirectPath={"/chaos"}/>
                     )}
                 />
                 <Route
                     exact path='/chaos'
                     render={(props)=>(
-                        <SoundWrapper {...props} songs={chaos} styles={chaosStyles} redirectPath={"/calm"}/>
+                        <SoundWrapper {...props} songs={chaos} styles={chaosStyles} currPath={"/chaos"} redirectPath={"/calm"}/>
                     )}
                 />
                 <Route
                     exact path='/chaos/:id'
                     render={(props)=>(
-                        <SoundWrapper {...props} songs={chaos} styles={chaosStyles} redirectPath={"/calm"}/>
+                        <SoundWrapper {...props} songs={chaos} styles={chaosStyles} currPath={"/chaos"} redirectPath={"/calm"}/>
                     )}
                 />
             </div>
