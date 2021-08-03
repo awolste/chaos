@@ -69,7 +69,7 @@ export default class SoundWrapper extends Component {
             <div className={this.props.styles["background"]}>
                 <button onClick={this.mute}>Mute</button>
                 <button onClick={this.saveSettings}>Test Save</button>
-                <Link to={this.props.redirectPath}>Change Route to {this.props.redirectPath}</Link>
+                <button><Link to={this.props.redirectPath}>Change Route to {this.props.redirectPath}</Link></button>
                 {/* <button onClick = {(this.randomize)}>Randomize</button> */}
 
                 {
