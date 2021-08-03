@@ -10,10 +10,12 @@ export default class SoundWrapper extends Component {
             // is muted should be true while is playing is false on start
             random:false,
             isMuted:true,
+            play:false,
             settingsId: this.props.match.params.id
         }
         // this.randomize = this.randomize.bind(this)
         this.mute = this.mute.bind(this)
+        this.setToPlaying = this.setToPlaying.bind(this)
         this.onVolumeChange = this.onVolumeChange.bind(this)
         this.saveSettings = this.saveSettings.bind(this)
     }
@@ -31,7 +33,6 @@ export default class SoundWrapper extends Component {
             axios.get(`https://blooming-sands-86661.herokuapp.com/settings/${this.props.match.params.id}`)
             .then(res => {
                 this.props.songs.forEach((song, index) => {
-                    console.log(res.data[index])
                     this.setState({
                         [song.title]: res.data[index]
                     })
@@ -59,6 +60,12 @@ export default class SoundWrapper extends Component {
         });
     }
 
+    setToPlaying(){
+        this.setState({
+            play: true
+        });
+    }
+
     onVolumeChange(event, newVol) {
         console.log("EVENT: " + event + "   NEWVAL: " + newVol)
             this.setState({
@@ -71,7 +78,6 @@ export default class SoundWrapper extends Component {
         this.props.songs.forEach(song => {
             volArr.push(this.state[song.title])
         })
-        console.log("HERE " + typeof volArr)
         axios.post(`https://blooming-sands-86661.herokuapp.com/create`, {
             volumes: volArr
         })
@@ -86,6 +92,7 @@ export default class SoundWrapper extends Component {
         return (
             // accessing a style in this format
             <div className={this.props.styles["background"]}>
+                <button onClick={this.setToPlaying}>Play</button>
                 <button onClick={this.mute}>Mute</button>
                 <button onClick={this.saveSettings}>Test Save</button>
                 <button><Link to={this.props.redirectPath}>Change Route to {this.props.redirectPath}</Link></button>
@@ -93,7 +100,6 @@ export default class SoundWrapper extends Component {
 
                 {
                     this.props.songs.map((song,index)=>{
-                        console.log("HERE " + this.state[song.title])
                         return (
                             <PlaySound 
                                 key={index}
@@ -101,6 +107,7 @@ export default class SoundWrapper extends Component {
                                 volume={this.state[song.title]}
                                 // random={this.state.random}
                                 isMuted={this.state.isMuted}
+                                play={this.state.play}
                                 onVolumeChange={this.onVolumeChange}
                             />
                         )

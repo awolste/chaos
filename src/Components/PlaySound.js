@@ -24,6 +24,10 @@ function PlaySound(props) {
     useEffect(()=>{
         setValue(props.volume)
     },[props.volume]);
+    
+    useEffect(()=>{
+        if(props.play){setIsPlaying(true)}
+    },[props.play]);
 
     return (
         <div>
