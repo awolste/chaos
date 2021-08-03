@@ -64,13 +64,13 @@ const routing = (
                 <Route
                     path='/calm'
                     render={(props)=>(
-                        <SoundWrapper {...props} songs={calm} styles={calmStyles}/>
+                        <SoundWrapper {...props} songs={calm} styles={calmStyles} redirectPath={"/chaos"}/>
                     )}
                 />
                 <Route
                     path='/chaos'
                     render={(props)=>(
-                        <SoundWrapper {...props} songs={chaos} styles={chaosStyles}/>
+                        <SoundWrapper {...props} songs={chaos} styles={chaosStyles} redirectPath={"/calm"}/>
                     )}
                 />
             </div>

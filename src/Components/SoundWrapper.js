@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import PlaySound from './PlaySound'
+import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 export default class SoundWrapper extends Component {
 
     constructor(props){
@@ -68,6 +69,7 @@ export default class SoundWrapper extends Component {
             <div className={this.props.styles["background"]}>
                 <button onClick={this.mute}>Mute</button>
                 <button onClick={this.saveSettings}>Test Save</button>
+                <Link to={this.props.redirectPath}>Change Route to {this.props.redirectPath}</Link>
                 {/* <button onClick = {(this.randomize)}>Randomize</button> */}
 
                 {
