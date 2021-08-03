@@ -10,6 +10,20 @@
 	}
 }
 
+.header{
+    padding-top: 5vh;
+    font-size: 70px;
+    display: flex;
+    white-space: pre;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerEnd{
+    color: white;
+}
+
 .backgroundCalm{
 	background: linear-gradient(-45deg, #ee7752, #fad8d6, #dfdeff, #d9c1f1);
 	background-size: 400% 400%;
@@ -62,7 +76,7 @@
 
 .buttonBox{
     position: absolute;
-    top: 60vh;
+    top: 70vh;
     right: 15%;
     border: 2px solid #333;
     width: 250px;
@@ -78,7 +92,7 @@
 
 .buttonBox2{
     position: absolute;
-    top: 66vh;
+    top: 76vh;
     right: 15%;
     border: 2px solid #333;
     width: 250px;
@@ -94,7 +108,7 @@
 
 .buttonBox3{
     position: absolute;
-    top: 72vh;
+    top: 82vh;
     right: 15%;
     border: 2px solid #333;
     width: 250px;
@@ -127,7 +141,7 @@
 
 .elementBox{
     position: absolute;
-    top: 60vh;
+    top: 70vh;
     left: 15%;
     border: 2px solid #333;
     width: 30vw;

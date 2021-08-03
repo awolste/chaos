@@ -1,8 +1,8 @@
 import Sound from 'react-sound';
 import React, {useState, useEffect} from 'react';
 import Slider from '@material-ui/core/Slider';
-import { makeStyles } from '@material-ui/core/styles';
-
+import { makeStyles, createMuiTheme  } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
 
 function PlaySound(props) {
     
@@ -37,6 +37,22 @@ function PlaySound(props) {
         },
       });
 
+      const muiTheme = createMuiTheme({
+        overrides:{
+          MuiSlider: {
+            thumb:{
+            color: "#333",
+            },
+            track: {
+              color: '#fff'
+            },
+            rail: {
+              color: '#333'
+            }
+          }
+      }
+      });
+
     const classes = useStyles();
 
     return (
@@ -53,12 +69,15 @@ function PlaySound(props) {
             
             <div className={classes.root}>
                 {/* <Slider value={value} onChange={handleChange} aria-labelledby="continuous-slider" /> */}
-                <Slider
-                    orientation="vertical"
-                    value={value}
-                    onChange={handleChange}
-                    aria-labelledby="vertical-slider"   
-                />
+                <ThemeProvider theme={muiTheme}>
+                    <Slider
+                        orientation="vertical"
+                        value={value}
+                        onChange={handleChange}
+                        aria-labelledby="vertical-slider"   
+                    />
+                </ThemeProvider>
+                
             </div>
             <div>
                 {props.song.title}

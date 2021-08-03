@@ -3,6 +3,7 @@ import axios from 'axios'
 import PlaySound from './PlaySound'
 import { Link } from 'react-router-dom'
 import toast,{ Toaster } from 'react-hot-toast'
+import Header from './Header'
 export default class SoundWrapper extends Component {
 
     constructor(props){
@@ -103,6 +104,7 @@ export default class SoundWrapper extends Component {
             // accessing a style in this format
             <div className={this.props.styles["background"]}>
                 <div><Toaster/></div>
+                <Header/>
                 <div className="elementBox">
                     <div id="bars">
                         <div className={this.props.styles["bar"]}></div>
