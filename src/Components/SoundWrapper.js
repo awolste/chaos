@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import PlaySound from './PlaySound'
-import { Link } from 'react-router-dom'
-import toast,{ Toaster } from 'react-hot-toast'
+import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 export default class SoundWrapper extends Component {
 
     constructor(props){
@@ -11,12 +10,9 @@ export default class SoundWrapper extends Component {
             // is muted should be true while is playing is false on start
             random:false,
             isMuted:true,
-            play:false,
-            settingsId: this.props.match.params.id
         }
         // this.randomize = this.randomize.bind(this)
         this.mute = this.mute.bind(this)
-        this.setToPlaying = this.setToPlaying.bind(this)
         this.onVolumeChange = this.onVolumeChange.bind(this)
         this.saveSettings = this.saveSettings.bind(this)
     }
@@ -28,25 +24,12 @@ export default class SoundWrapper extends Component {
     // }
 
     componentDidMount(){
-        
-        console.log(this.props.match.params.id)
-        if (this.props.match.params.id !== undefined){
-            axios.get(`https://blooming-sands-86661.herokuapp.com/settings/${this.props.match.params.id}`)
-            .then(res => {
-                this.props.songs.forEach((song, index) => {
-                    this.setState({
-                        [song.title]: res.data[index]
-                    })
-                }); 
+        this.props.songs.forEach(song => {
+            this.setState({
+                [song.title]: 0
             })
-        }
-        else{
-            this.props.songs.forEach(song => {
-                this.setState({
-                    [song.title]: 0
-                })
-            });
-        }
+        });
+        console.log(this.props.styles["background"])
     }
 
     mute(){
@@ -57,12 +40,6 @@ export default class SoundWrapper extends Component {
             this.setState({
                 [song.title]: 0
             })
-        });
-    }
-
-    setToPlaying(){
-        this.setState({
-            play: true
         });
     }
 
@@ -78,14 +55,10 @@ export default class SoundWrapper extends Component {
         this.props.songs.forEach(song => {
             volArr.push(this.state[song.title])
         })
-        axios.post(`https://blooming-sands-86661.herokuapp.com/create`, {
-            volumes: volArr
-        })
+
+        axios.post(`http://blooming-sands-86661.herokuapp.com/create`, volArr)
             .then(res => {
-                // need to remove id if url has an id already
-                // window.location.origin + /chaos 
-                navigator.clipboard.writeText(window.location.origin + this.props.currPath +"/"+ res.data)  
-                toast.success('Sharable Link Copied to Clipboard!');
+                    console.log(res.data)
             })
     }
     
@@ -94,11 +67,9 @@ export default class SoundWrapper extends Component {
         return (
             // accessing a style in this format
             <div className={this.props.styles["background"]}>
-                <div><Toaster/></div>
-                <button onClick={this.setToPlaying}>Play</button>
-                <button onClick={this.mute}>Mute</button>
-                <button onClick={this.saveSettings}>Save</button>
-                <button><Link to={this.props.redirectPath}>Change Route to {this.props.redirectPath}</Link></button>
+                <button className="muteButton" onClick={this.mute}>Mute</button>
+                <button className = "saveButton" onClick={this.saveSettings}>Test Save</button>
+                <button className="switchButton"><Link className="buttonLink" to={this.props.redirectPath}>C{(this.props.redirectPath).substring(2)} Mode</Link></button>
                 {/* <button onClick = {(this.randomize)}>Randomize</button> */}
 
                 {
@@ -107,10 +78,8 @@ export default class SoundWrapper extends Component {
                             <PlaySound 
                                 key={index}
                                 song={song}
-                                volume={this.state[song.title]}
                                 // random={this.state.random}
                                 isMuted={this.state.isMuted}
-                                play={this.state.play}
                                 onVolumeChange={this.onVolumeChange}
                             />
                         )

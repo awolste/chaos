@@ -20,8 +20,43 @@
 }
 
 .backgroundChaos{
-	background: linear-gradient(-45deg, red, blue, yellow, green);
+	background: radial-gradient(#55188f,#0f1425,#cb0910,#000000);
 	background-size: 400% 400%;
-	animation: gradient 5s ease infinite;
+	animation: gradient 3s cubic-bezier(0.6, -0.28, 0.735, 0.045) infinite;
 	height: 100vh;
 }
+
+.buttonLink:link {
+  text-decoration: none;
+}
+
+.buttonLink:visited {
+  text-decoration: none;
+}
+
+.buttonLink:hover {
+  text-decoration: none;
+}
+
+.buttonLink:active {
+  text-decoration: none;
+}
+
+.switchButton {
+  position: absolute;
+  top: 60%;
+  right: 35%;
+}
+
+.muteButton {
+  position: absolute;
+  top: 65%;
+  right: 35%;
+}
+
+.saveButton {
+  position: absolute;
+  top: 70%;
+  right: 35%;
+}
+
