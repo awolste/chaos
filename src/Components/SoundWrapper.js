@@ -21,6 +21,7 @@ export default class SoundWrapper extends Component {
         this.onVolumeChange = this.onVolumeChange.bind(this)
         this.saveSettings = this.saveSettings.bind(this)
         this.seeIfMuted = this.seeIfMuted.bind(this)
+        this.seeIfPlaying = this.seeIfPlaying.bind(this)
     }
 
     // randomize () {
@@ -140,6 +141,16 @@ export default class SoundWrapper extends Component {
         }
         
     }
+    seeIfPlaying(){
+        if (!this.state.play && this.props.match.params.id !== undefined){
+            return (
+                <div className="overlay">\
+                    <button className="playButton" onClick={this.setToPlaying}></button>
+                </div>
+            )
+            
+        }
+    }
     
     render() {
 
@@ -151,6 +162,7 @@ export default class SoundWrapper extends Component {
                 <div className="elementBox">
                     {this.seeIfMuted()}
                 </div>
+                {this.seeIfPlaying()}
 
                 <div className="buttonBox">
                     <div className="buttonText">
@@ -170,9 +182,6 @@ export default class SoundWrapper extends Component {
                     </div>
                     <button className="musicButton" onClick={this.saveSettings}></button>
                 </div>
-                <button className="" onClick={this.setToPlaying}>Play</button>
-
-                
                 
                 {/* <button onClick = {(this.randomize)}>Randomize</button> */}
 
