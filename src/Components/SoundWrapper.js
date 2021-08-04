@@ -144,7 +144,7 @@ export default class SoundWrapper extends Component {
     seeIfPlaying(){
         if (!this.state.play && this.props.match.params.id !== undefined){
             return (
-                <div className="overlay">\
+                <div className="overlay">
                     <button className="playButton" onClick={this.setToPlaying}></button>
                 </div>
             )
@@ -202,6 +202,7 @@ export default class SoundWrapper extends Component {
                         })
                     }
                 </div>
+                <div className="footer">Sounds from Zapsplat.com</div>
             </div>
         )
     }
