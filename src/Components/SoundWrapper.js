@@ -171,13 +171,13 @@ export default class SoundWrapper extends Component {
                     <Link className=" musicButton buttonLink" to={this.props.redirectPath}></Link>
                 </div>
                 <div className="buttonBox2">
-                    <div className="buttonText2">
+                    <div className="buttonText">
                         Mute
                     </div>
                     <button className="musicButton" onClick={this.mute}></button>
                 </div>
                 <div className="buttonBox3">
-                    <div className="buttonText3">
+                    <div className="buttonText">
                         Save Settings
                     </div>
                     <button className="musicButton" onClick={this.saveSettings}></button>

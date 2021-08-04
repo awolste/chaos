@@ -47,10 +47,10 @@
 .musicButton {
     position: absolute;
     right: 10px;
-    top: 5px;
+    top: .75vh;
     background-color: #333;
     border-radius: 25px;
-    height: 25px;
+    height: 3.5vh;
     width: 50px;
 }
 
@@ -65,14 +65,15 @@
     right: 15%;
     border: 2px solid #333;
     width: 30vw;
-    height: 35px;
+    height: 5vh;
     border-radius: 25px;
 }
 
 .buttonText{
     position: absolute;
+    font-size: 2.5vmin;
     left: 10px;
-    top: 5px;
+    bottom: 1.5vh;
 }
 
 .buttonBox2{
@@ -81,14 +82,8 @@
     right: 15%;
     border: 2px solid #333;
     width: 30vw;
-    height: 35px;
+    height: 5vh;
     border-radius: 25px;
-}
-
-.buttonText2{
-    position: absolute;
-    left: 10px;
-    top: 5px;
 }
 
 .buttonBox3{
@@ -97,14 +92,8 @@
     right: 15%;
     border: 2px solid #333;
     width: 30vw;
-    height: 35px;
+    height: 5vh;
     border-radius: 25px;
-}
-
-.buttonText3{
-    position: absolute;
-    left: 10px;
-    top: 5px;
 }
 
 .slider{
@@ -133,7 +122,7 @@
     left: 15%;
     border: 2px solid #333;
     width: 30vw;
-    height: 16.75vh;
+    height: 17vh;
     border-radius: 25px;
 }
 
@@ -210,11 +199,11 @@
 @keyframes sound {
     0% {
        opacity: .5;
-        height: 3px; 
+        height: 1vh; 
     }
     100% {
         opacity: 1;       
-        height: 100px;
+        height: 16vh;
     }
 }
 

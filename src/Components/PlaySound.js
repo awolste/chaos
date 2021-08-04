@@ -31,7 +31,11 @@ function PlaySound(props) {
     const useStyles = makeStyles({
         root: {
             height: "30vh",
-            padding: "4vw",
+            paddingLeft: "4vw",
+            paddingRight: "4vw",
+            paddingBottom: "2vh",
+            paddingRight: "4vw",
+            paddingTop: "2vh",
             width: "14px !important",
             trackColor: "#333"
         },
