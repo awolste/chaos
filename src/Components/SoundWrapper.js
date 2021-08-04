@@ -202,7 +202,7 @@ export default class SoundWrapper extends Component {
                         })
                     }
                 </div>
-                <div className="footer">Sounds from Zapsplat.com</div>
+                <div className="footer">Sounds from Zapsplat.com | Made with &#9829; by Cassiopeia</div>
             </div>
         )
     }
