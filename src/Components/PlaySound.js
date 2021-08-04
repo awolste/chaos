@@ -83,7 +83,7 @@ function PlaySound(props) {
                 </ThemeProvider>
                 
             </div>
-            <div>
+            <div className="title">
                 {props.song.title}
             </div>
         </div>
