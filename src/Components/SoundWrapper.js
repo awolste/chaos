@@ -10,13 +10,13 @@ export default class SoundWrapper extends Component {
         super(props)
         this.state={
             // is muted should be true while is playing is false on start
-            random:false,
             isMuted:true,
             play:false,
             settingsId: this.props.match.params.id
         }
         // this.randomize = this.randomize.bind(this)
         this.mute = this.mute.bind(this)
+        this.randomize = this.randomize.bind(this)
         this.setToPlaying = this.setToPlaying.bind(this)
         this.onVolumeChange = this.onVolumeChange.bind(this)
         this.saveSettings = this.saveSettings.bind(this)
@@ -24,15 +24,15 @@ export default class SoundWrapper extends Component {
         this.seeIfPlaying = this.seeIfPlaying.bind(this)
     }
 
-    // randomize () {
-    //     this.setState({
-    //         random: !this.state.random
-    //     });
-    // }
+    randomize(){
+        this.props.songs.forEach(song => {
+            this.setState({
+                [song.title]: Math.random()*100
+            })
+        });
+    }
 
     componentDidMount(){
-        
-        console.log(this.props.match.params.id)
         if (this.props.match.params.id !== undefined){
             axios.get(`https://blooming-sands-86661.herokuapp.com/settings/${this.props.match.params.id}`)
             .then(res => {
@@ -176,15 +176,19 @@ export default class SoundWrapper extends Component {
                     </div>
                     <button className="musicButton" onClick={this.mute}></button>
                 </div>
+                {/* <div className="buttonBox4">
+                    <div className="buttonText">
+                        Randomize
+                    </div>
+                    <button className="musicButton" onClick={this.randomize}></button>
+                </div> */}
                 <div className="buttonBox3">
                     <div className="buttonText">
-                        Save Settings
+                        Share
                     </div>
                     <button className="musicButton" onClick={this.saveSettings}></button>
                 </div>
-                
-                {/* <button onClick = {(this.randomize)}>Randomize</button> */}
-
+            
                 <div className="songs">
                     {
                         this.props.songs.map((song,index)=>{
