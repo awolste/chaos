@@ -20,6 +20,7 @@ export default class SoundWrapper extends Component {
         this.setToPlaying = this.setToPlaying.bind(this)
         this.onVolumeChange = this.onVolumeChange.bind(this)
         this.saveSettings = this.saveSettings.bind(this)
+        this.seeIfMuted = this.seeIfMuted.bind(this)
     }
 
     // randomize () {
@@ -98,6 +99,47 @@ export default class SoundWrapper extends Component {
                 );
             })
     }
+
+    seeIfMuted(){
+        let muted = true
+        this.props.songs.map((song,index)=>{
+            if(this.state[song.title] > 0)
+                muted = false
+        })
+        if (!muted){
+            return <div id="bars">
+                    <div className={this.props.styles["bar"]}></div>
+                    <div className={this.props.styles["bar"]}></div>
+                    <div className={this.props.styles["bar"]}></div>
+                    <div className={this.props.styles["bar"]}></div>
+                    <div className={this.props.styles["bar"]}></div>
+                    <div className={this.props.styles["bar"]}></div>
+                    <div className={this.props.styles["bar"]}></div>
+                    <div className={this.props.styles["bar"]}></div>
+                    <div className={this.props.styles["bar"]}></div>
+                    <div className={this.props.styles["bar"]}></div>
+                    <div className={this.props.styles["bar"]}></div>
+                    <div className={this.props.styles["bar"]}></div>
+                    <div className={this.props.styles["bar"]}></div>
+                    <div className={this.props.styles["bar"]}></div>
+                    <div className={this.props.styles["bar"]}></div>
+                    <div className={this.props.styles["bar"]}></div>
+                    <div className={this.props.styles["bar"]}></div>
+                    <div className={this.props.styles["bar"]}></div>
+                    <div className={this.props.styles["bar"]}></div>
+                    <div className={this.props.styles["bar"]}></div>
+                    <div className={this.props.styles["bar"]}></div>
+                    <div className={this.props.styles["bar"]}></div>
+                    <div className={this.props.styles["bar"]}></div>
+                    <div className={this.props.styles["bar"]}></div>
+                    <div className={this.props.styles["bar"]}></div>
+                    <div className={this.props.styles["bar"]}></div>
+                    <div className={this.props.styles["bar"]}></div>
+                    <div className={this.props.styles["bar"]}></div>
+                </div>
+        }
+        
+    }
     
     render() {
 
@@ -107,36 +149,7 @@ export default class SoundWrapper extends Component {
                 <div><Toaster/></div>
                 <Header/>
                 <div className="elementBox">
-                    <div id="bars">
-                        <div className={this.props.styles["bar"]}></div>
-                        <div className={this.props.styles["bar"]}></div>
-                        <div className={this.props.styles["bar"]}></div>
-                        <div className={this.props.styles["bar"]}></div>
-                        <div className={this.props.styles["bar"]}></div>
-                        <div className={this.props.styles["bar"]}></div>
-                        <div className={this.props.styles["bar"]}></div>
-                        <div className={this.props.styles["bar"]}></div>
-                        <div className={this.props.styles["bar"]}></div>
-                        <div className={this.props.styles["bar"]}></div>
-                        <div className={this.props.styles["bar"]}></div>
-                        <div className={this.props.styles["bar"]}></div>
-                        <div className={this.props.styles["bar"]}></div>
-                        <div className={this.props.styles["bar"]}></div>
-                        <div className={this.props.styles["bar"]}></div>
-                        <div className={this.props.styles["bar"]}></div>
-                        <div className={this.props.styles["bar"]}></div>
-                        <div className={this.props.styles["bar"]}></div>
-                        <div className={this.props.styles["bar"]}></div>
-                        <div className={this.props.styles["bar"]}></div>
-                        <div className={this.props.styles["bar"]}></div>
-                        <div className={this.props.styles["bar"]}></div>
-                        <div className={this.props.styles["bar"]}></div>
-                        <div className={this.props.styles["bar"]}></div>
-                        <div className={this.props.styles["bar"]}></div>
-                        <div className={this.props.styles["bar"]}></div>
-                        <div className={this.props.styles["bar"]}></div>
-                        <div className={this.props.styles["bar"]}></div>
-                    </div>
+                    {this.seeIfMuted()}
                 </div>
 
                 <div className="buttonBox">

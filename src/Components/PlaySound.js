@@ -30,7 +30,7 @@ function PlaySound(props) {
 
     const useStyles = makeStyles({
         root: {
-            height: 300,
+            height: "30vh",
             padding: "4vw",
             width: "14px !important",
             trackColor: "#333"

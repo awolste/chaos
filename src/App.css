@@ -79,7 +79,7 @@
     top: 70vh;
     right: 15%;
     border: 2px solid #333;
-    width: 250px;
+    width: 30vw;
     height: 35px;
     border-radius: 25px;
 }
@@ -95,7 +95,7 @@
     top: 76vh;
     right: 15%;
     border: 2px solid #333;
-    width: 250px;
+    width: 30vw;
     height: 35px;
     border-radius: 25px;
 }
@@ -111,7 +111,7 @@
     top: 82vh;
     right: 15%;
     border: 2px solid #333;
-    width: 250px;
+    width: 30vw;
     height: 35px;
     border-radius: 25px;
 }
@@ -136,7 +136,6 @@
 .song{
     display: inline-block;
     text-align: center;
-    font-weight: bold;
 }
 
 .elementBox{
