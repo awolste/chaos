@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import PlaySound from './PlaySound'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import toast,{ Toaster } from 'react-hot-toast'
 import Header from './Header'
 export default class SoundWrapper extends Component {
@@ -22,6 +22,7 @@ export default class SoundWrapper extends Component {
         this.saveSettings = this.saveSettings.bind(this)
         this.seeIfMuted = this.seeIfMuted.bind(this)
         this.seeIfPlaying = this.seeIfPlaying.bind(this)
+        this.checkPath = this.checkPath.bind(this)
     }
 
     randomize(){
@@ -31,9 +32,14 @@ export default class SoundWrapper extends Component {
             })
         });
 
-        this.setState({
-            play: false
-        });
+        if (!this.state.play){
+            console.log("INHERE")
+            // return ( <div className="overlay">
+            //     <button className="playButton" onClick={this.setToPlaying}></button>
+            // </div>)
+           
+        }
+        
     }
 
     componentDidMount(){
@@ -47,15 +53,9 @@ export default class SoundWrapper extends Component {
                 }); 
             })
             .catch((error) => {
-                console.log("ERROR: Id does not exist ("+ error + ")");
-                this.props.songs.forEach(song => {
-                    this.setState({
-                        [song.title]: 0
-                    })
-                });
                 this.setState({
-                    play: true
-                });
+                    redirect: true
+                })
             })
         }
         else{
@@ -157,7 +157,19 @@ export default class SoundWrapper extends Component {
         
     }
     seeIfPlaying(){
-        if (!this.state.play && this.props.match.params.id !== undefined){
+        if(this.props.currPath.includes("chaos")){
+            if (!this.state.play){
+                return (
+                    <div className="overlay">
+                        <button className="playButton" onClick={this.setToPlaying}></button>
+                    </div>
+                )
+                
+            }
+        }
+        
+        else {
+            if (!this.state.play && this.props.match.params.id !== undefined){
             return (
                 <div className="overlay">
                     <button className="playButton" onClick={this.setToPlaying}></button>
@@ -165,9 +177,23 @@ export default class SoundWrapper extends Component {
             )
             
         }
+        }
+        
+    }
+
+    checkPath(){
+        if(this.props.currPath.includes("chaos")){
+            return (
+                <button className="chaos btn-hover color-2" onClick={this.randomize}>
+                    Absolute Chaos
+                </button>
+            )
+            
+        }
     }
     
     render() {
+        if(this.state.redirect)  return <Redirect to={this.props.currPath} />
 
         return (
             // accessing a style in this format
@@ -193,12 +219,7 @@ export default class SoundWrapper extends Component {
                     </div>
                     <button className="musicButton" onClick={this.mute}></button>
                 </div>
-                {/* <div className="buttonBox4">
-                    <div className="buttonText">
-                        Randomize
-                    </div>
-                    <button className="musicButton" onClick={this.randomize}></button>
-                </div> */}
+                {this.checkPath()}
                 <div className="buttonBox3">
                     <div className="buttonText">
                         Share
