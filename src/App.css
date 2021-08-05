@@ -38,12 +38,6 @@
 	height: 100vh;
 }
 
-.buttonLink:link {
-    text-decoration: none;
-    background-color: #333;
-}
-
-
 .musicButton {
     position: absolute;
     right: 10px;
