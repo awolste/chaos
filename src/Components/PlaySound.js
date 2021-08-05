@@ -34,7 +34,6 @@ function PlaySound(props) {
             paddingLeft: "4vw",
             paddingRight: "4vw",
             paddingBottom: "2vh",
-            paddingRight: "4vw",
             paddingTop: "2vh",
             width: "14px !important",
             trackColor: "#333"

@@ -30,6 +30,10 @@ export default class SoundWrapper extends Component {
                 [song.title]: Math.random()*100
             })
         });
+
+        this.setState({
+            play: false
+        });
     }
 
     componentDidMount(){
@@ -41,6 +45,17 @@ export default class SoundWrapper extends Component {
                         [song.title]: res.data[index]
                     })
                 }); 
+            })
+            .catch((error) => {
+                console.log("ERROR: Id does not exist ("+ error + ")");
+                this.props.songs.forEach(song => {
+                    this.setState({
+                        [song.title]: 0
+                    })
+                });
+                this.setState({
+                    play: true
+                });
             })
         }
         else{
